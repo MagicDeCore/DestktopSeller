@@ -41,12 +41,10 @@ public class ConnectionService {
         int x = process.waitFor();
         if (x == 0) {
             success = true;
-            System.out.println("Connection Successful, "
-                    + "Output was " + x);
+            System.out.println("Connection Successful, Output was " + x);
         }
         else {
-            System.out.println("Internet Not Connected, "
-                    + "Output was " + x);
+            System.out.println("Internet Not Connected, Output was " + x);
         }
         return success;
     }

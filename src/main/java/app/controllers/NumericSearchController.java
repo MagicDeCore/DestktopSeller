@@ -24,22 +24,17 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 @SuppressWarnings("SpringJavaAutowiringInspection")
-@Component
 public class NumericSearchController {
 
-    @Autowired
-    private ProductService productService;
-    @Autowired
-    private ProductRepository productRepository;
-    @Autowired
-    private DiscontRepository discontRepository;
-    @Autowired
-    private ProductBucketRepository productBucketRepository;
-    @Autowired
-    private ShoppingCardRepository shoppingCardRepository;
+    @Autowired private ProductService productService;
+    @Autowired private ProductRepository productRepository;
+    @Autowired private DiscontRepository discontRepository;
+    @Autowired private ProductBucketRepository productBucketRepository;
+    @Autowired private ShoppingCardRepository shoppingCardRepository;
 
 
     public ShoppingCard getShoppingCard() {
@@ -183,27 +178,15 @@ public class NumericSearchController {
     @FXML private Label totalTotalPrice;
     private double totalTotalPriceValue = 0;
 
-
-
-
-
-
-
-    ArrayList list;
-
     @SuppressWarnings("unchecked")
     @PostConstruct
     public void init() {
 
     }
 
-
     @FXML
     public void initialize() {
-        // Этап инициализации JavaFX
         background.setImage(new Image("/fxml/numericSearch/res/BackgroundMain.png"));
-
-
         minusProduct1.setImage(new Image("/fxml/numericSearch/res/ShopingCart/-.png"));
         plusProduct1.setImage(new Image("/fxml/numericSearch/res/ShopingCart/+.png"));
         plusProduct1.setCursor(Cursor.HAND);
@@ -258,14 +241,6 @@ public class NumericSearchController {
         subtotalCountVal.setVisible(false);
         headerss.setVisible(false);
 
-        myInit();
-        System.out.println("START TIME FXML INIT: " + new Date().getTime());
-
-        System.out.println("GRID SIZE: " + productGrid.getChildren().size());
-
-    }
-
-    private void myInit() {
         initProductGrid();
     }
 
@@ -286,7 +261,6 @@ public class NumericSearchController {
         activeTextField = searchProd;
         activeTextField.setText(tmp);
     }
-
 
     @FXML
     private void setActiveQuanty(MouseEvent mouseEvent) {
@@ -421,7 +395,6 @@ public class NumericSearchController {
 
     @FXML
     private void enterButtonAction(ActionEvent event) {
-
         setShoppingCard();
         addProductToCardByBarCode(searchProd.getText(), quanty.getText());
         drowShoppingCard();
@@ -429,7 +402,6 @@ public class NumericSearchController {
 
     @FXML
     private void updateProductsAction(ActionEvent event) {
-        System.out.println("OOP");
         productService.updateLocalProducts();
     }
 
@@ -440,7 +412,6 @@ public class NumericSearchController {
     @FXML
     private void initShoppingCard() {
         shoppingCard = productService.initTestShoppingCard();
-        System.out.println("SIZE: " + shoppingCard.getProductBucket().getProductList().size());
         drowShoppingCard();
     }
 
@@ -458,17 +429,14 @@ public class NumericSearchController {
         subtotalCountVal.setVisible(true);
         headerss.setVisible(true);
 
-        ArrayList<Product> products = (ArrayList<Product>) shoppingCard.getProductBucket().getProductList();
-        ArrayList<Product> uniqeProductList = new ArrayList<Product>();
+        List<Product> products = shoppingCard.getProductBucket().getProductList();
+        List<Product> uniqeProductList = new ArrayList<Product>();
         for (int i = 0; i < products.size(); i++) {
             if (!uniqeProductList.contains(products.get(i))) {
                 uniqeProductList.add(products.get(i));
             }
         }
 
-        uniqeProductList.forEach(pr->{
-            System.out.println("PROD: " + pr);
-        });
         int productCount = uniqeProductList.size();
         for (int i = 0; i < productCount; i++) {
             productGrid.getChildren().get(i).setVisible(true);
@@ -479,8 +447,8 @@ public class NumericSearchController {
                 productQnty1.setText("" + count);
                 singlePrice1.setText("" + product.getPrice() + ".0");
                 totalPrice1.setText("" + (product.getPrice() * count) + ".0");
-                singlePriceValue1 = Double.parseDouble(singlePrice1.getText());//.substring(0, singlePrice1.getText().length() -3));
-                totalPriceValue1 = Double.parseDouble(totalPrice1.getText());//.substring(0, totalPrice1.getText().length() -3));
+                singlePriceValue1 = Double.parseDouble(singlePrice1.getText());
+                totalPriceValue1 = Double.parseDouble(totalPrice1.getText());
                 um1.setText(product.getUm());
                 barCode1.setText("" + product.getBarcode());
 
@@ -493,8 +461,8 @@ public class NumericSearchController {
                 productQnty2.setText("" + count);
                 singlePrice2.setText("" + product.getPrice() + ".0");
                 totalPrice2.setText("" + (product.getPrice() * count) + ".0");
-                singlePriceValue2 = Double.parseDouble(singlePrice2.getText());//.substring(0, singlePrice2.getText().length() -3));
-                totalPriceValue2 = Double.parseDouble(totalPrice2.getText());//.substring(0, totalPrice2.getText().length() -3));
+                singlePriceValue2 = Double.parseDouble(singlePrice2.getText());
+                totalPriceValue2 = Double.parseDouble(totalPrice2.getText());
                 um2.setText(product.getUm());
                 barCode2.setText("" + product.getBarcode());
                 if (shoppingCard.getDiscount() != null && i == productCount -1) {
@@ -506,8 +474,8 @@ public class NumericSearchController {
                 productQnty3.setText("" + count);
                 singlePrice3.setText("" + product.getPrice() + ".0");
                 totalPrice3.setText("" + product.getPrice() * count + ".0");
-                singlePriceValue3 = Double.parseDouble(singlePrice3.getText());//.substring(0, singlePrice3.getText().length() -3));
-                totalPriceValue3 = Double.parseDouble(totalPrice3.getText());//.substring(0, totalPrice3.getText().length() -3));
+                singlePriceValue3 = Double.parseDouble(singlePrice3.getText());
+                totalPriceValue3 = Double.parseDouble(totalPrice3.getText());
                 um3.setText(product.getUm());
                 barCode3.setText("" + product.getBarcode());
                 if (shoppingCard.getDiscount() != null && i == productCount -1) {
@@ -519,8 +487,8 @@ public class NumericSearchController {
                 productQnty4.setText("" + count);
                 singlePrice4.setText("" + product.getPrice() + ".0");
                 totalPrice4.setText("" + product.getPrice() * count + ".0");
-                singlePriceValue4 = Double.parseDouble(singlePrice4.getText());//.substring(0, singlePrice4.getText().length() -3));
-                totalPriceValue4 = Double.parseDouble(totalPrice4.getText());//.substring(0, totalPrice4.getText().length() -3));
+                singlePriceValue4 = Double.parseDouble(singlePrice4.getText());
+                totalPriceValue4 = Double.parseDouble(totalPrice4.getText());
                 um4.setText(product.getUm());
                 barCode4.setText("" + product.getBarcode());
                 if (shoppingCard.getDiscount() != null && i == (productCount -1)) {
@@ -532,8 +500,8 @@ public class NumericSearchController {
                 productQnty5.setText("" + count);
                 singlePrice5.setText("" + product.getPrice() + ".0");
                 totalPrice5.setText("" + product.getPrice() * count + ".0");
-                singlePriceValue5 = Double.parseDouble(singlePrice5.getText());//.substring(0, singlePrice5.getText().length() -3));
-                totalPriceValue5 = Double.parseDouble(totalPrice5.getText());//.substring(0, totalPrice5.getText().length() -3));
+                singlePriceValue5 = Double.parseDouble(singlePrice5.getText());
+                totalPriceValue5 = Double.parseDouble(totalPrice5.getText());
                 um5.setText(product.getUm());
                 barCode5.setText("" + product.getBarcode());
                 if (shoppingCard.getDiscount() != null && i == productCount -1) {
@@ -545,8 +513,8 @@ public class NumericSearchController {
                 productQnty6.setText("" + count);
                 singlePrice6.setText("" + product.getPrice() + ".0");
                 totalPrice6.setText("" + product.getPrice() * count + ".0");
-                singlePriceValue6 = Double.parseDouble(singlePrice6.getText());//.substring(0, singlePrice6.getText().length() -3));
-                totalPriceValue6 = Double.parseDouble(totalPrice6.getText());//.substring(0, totalPrice6.getText().length() -3));
+                singlePriceValue6 = Double.parseDouble(singlePrice6.getText());
+                totalPriceValue6 = Double.parseDouble(totalPrice6.getText());
                 um6.setText(product.getUm());
                 barCode6.setText("" + product.getBarcode());
 
@@ -559,8 +527,8 @@ public class NumericSearchController {
                 productQnty7.setText("" + count);
                 singlePrice7.setText("" + product.getPrice() + ".0");
                 totalPrice7.setText("" + product.getPrice() * count + ".0");
-                singlePriceValue7 = Double.parseDouble(singlePrice7.getText());//.substring(0, singlePrice7.getText().length() -2));
-                totalPriceValue7 = Double.parseDouble(totalPrice7.getText());//.substring(0, totalPrice7.getText().length() -3));
+                singlePriceValue7 = Double.parseDouble(singlePrice7.getText());
+                totalPriceValue7 = Double.parseDouble(totalPrice7.getText());
                 um7.setText(product.getUm());
                 barCode7.setText("" + product.getBarcode());
 
@@ -569,7 +537,6 @@ public class NumericSearchController {
                     setDiscount(i);
                 }
             }
-            System.out.println(productGrid.getChildren().get(i).getId());
         }
     }
 
@@ -577,15 +544,10 @@ public class NumericSearchController {
             discountCountVal.setText("" + shoppingCard.getDiscount().getValue() + ",00");
             discount.setText("!");
             discountAdded.setText("Discount");
-
-//            Node child = productGrid.getChildren().get(7);
-//            productGrid.getChildren().remove(7);
-//            productGrid.getChildren().set(index + 1, child);
             productGrid.getChildren().get(7).setVisible(true);
-
     }
 
-    private int calculateProductCount(ArrayList<Product> products, Product product) {
+    private int calculateProductCount(List<Product> products, Product product) {
         int count = 0;
         for (int i = 0; i < products.size(); i++) {
             if (products.get(i).getName().equals(product.getName())) {
@@ -720,7 +682,6 @@ public class NumericSearchController {
         totalPriceValue4 = totalPriceValue4 + singlePriceValue4;
         totalPrice4.setText("" + totalPriceValue4);
 
-
         calculateTotals();
     }
 
@@ -780,5 +741,4 @@ public class NumericSearchController {
             }
         }
     }
-
 }

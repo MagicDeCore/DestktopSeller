@@ -2,7 +2,6 @@ package app;
 
 import app.controllers.LoginController;
 import app.controllers.NumericSearchController;
-import app.controllers.ShoppingCardController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import org.springframework.context.annotation.Bean;
@@ -11,13 +10,6 @@ import org.springframework.context.annotation.Configuration;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * Date: 27.08.15
- * Time: 11:04
- *
- * @author Ruslan Molchanov (ruslanys@gmail.com)
- * @author http://mruslan.com
- */
 @Configuration
 public class ControllersConfiguration {
 
@@ -35,14 +27,6 @@ public class ControllersConfiguration {
     public ViewHolder getShoppingCardView() throws IOException {
         return loadView("fxml/shoppingCard/shoppingTest.fxml");
     }
-    /**
-     * Именно благодаря этому методу мы добавили контроллер в контекст спринга,
-     * и заставили его сделать произвести все необходимые инъекции.
-     */
-//    @Bean
-//    public MainController getMainController() throws IOException {
-//        return (MainController) getMainView().getController();
-//    }
 
     @Bean
     public LoginController getLoginController() throws IOException {
@@ -59,12 +43,6 @@ public class ControllersConfiguration {
         return (ShoppingCardController) getShoppingCardView().getController();
     }
 
-
-    /**
-     * Самый обыкновенный способ использовать FXML загрузчик.
-     * Как раз-таки на этом этапе будет создан объект-контроллер,
-     * произведены все FXML инъекции и вызван метод инициализации контроллера.
-     */
     public ViewHolder loadView(String url) throws IOException {
         InputStream fxmlStream = null;
         try {
@@ -79,10 +57,6 @@ public class ControllersConfiguration {
         }
     }
 
-    /**
-     * Класс - оболочка: контроллер мы обязаны указать в качестве бина,
-     * а view - представление, нам предстоит использовать в точке входа {@link Application}.
-     */
     public class ViewHolder {
         private Parent view;
         private Object controller;
@@ -108,5 +82,4 @@ public class ControllersConfiguration {
             this.controller = controller;
         }
     }
-
 }

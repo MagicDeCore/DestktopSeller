@@ -1,4 +1,4 @@
-package app.habrahabr;
+package app.common;
 
 import app.entity.external.ExternalConfig;
 import app.entity.external.data.auth.domain.User;
@@ -33,15 +33,10 @@ import static org.junit.Assert.assertNull;
 @TransactionConfiguration
 public class JPAMultipleDBTest {
 
-    @Autowired
-    private PersonRepository personRepository;
-    @Autowired
-    private ProductRepository productRepository;
-    @Autowired
-    private ProductImageRepository productImageRepository;
-
-    @Autowired
-    private UserRepository userRepository;
+    @Autowired private PersonRepository personRepository;
+    @Autowired private ProductRepository productRepository;
+    @Autowired private ProductImageRepository productImageRepository;
+    @Autowired private UserRepository userRepository;
 
     @Test
     @Transactional("externalTransactionManager")
@@ -98,7 +93,7 @@ public class JPAMultipleDBTest {
     }
 
     @Test
-//    @Transactional("localTransactionManager")
+    @Transactional("localTransactionManager")
     public void whenCreatingImage() {
         File image = new File("/img/samsung.jpg");
         ProductImage productImage = new ProductImage();
@@ -114,7 +109,7 @@ public class JPAMultipleDBTest {
     }
 
     @Test
-//    @Transactional("localTransactionManager")
+    @Transactional("localTransactionManager")
     public void whenCreatingProductWithImageAsID() {
         Long version =  new Date().getTime();
         File image = new File("P:\\Documents\\desktopseller\\sample-spring-boot-javafx-master\\src\\main\\resources\\img\\samsung.jpg");
@@ -126,18 +121,11 @@ public class JPAMultipleDBTest {
         byte[] imageBytes = null;
         try {
             imageBytes = Files.readAllBytes(image.toPath());
-
-            System.out.println("####################");
-            System.out.println("IMAGE SIZE: " + imageBytes.length);
         } catch (IOException e) {
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!NO IMAGE DATA!!!");
             e.printStackTrace();
         }
         productImage.setImage(imageBytes);
-
         productImage = productImageRepository.save(productImage);
-        System.out.println("IMAGE SAVEEED");
-
 
         Product product = new Product("TestProduct", 1111, version, 750, 8, "categoryA", "umBBB",
                 productImage.getId());
@@ -146,6 +134,4 @@ public class JPAMultipleDBTest {
 
         assertNotNull(productRepository.findOne(product.getId()));
     }
-
-
 }

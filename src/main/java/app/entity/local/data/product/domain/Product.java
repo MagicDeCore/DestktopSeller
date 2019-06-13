@@ -27,13 +27,10 @@ public class Product {
     @Column(name = "ACTIVE")
     private Boolean active;
 
-
-
-
-//    @OneToOne(fetch = FetchType.LAZY,
-//            cascade =  CascadeType.ALL,
-//            mappedBy = "PRODUCT")
-//    private  ProductImageExt productImage;
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade =  CascadeType.ALL,
+            mappedBy = "PRODUCT")
+    private  ProductImageExt productImage;
 
     public Product() { }
 
@@ -138,13 +135,13 @@ public class Product {
         this.productImageId = productImageId;
     }
 
-    //    public ProductImageExt getProductImage() {
-//        return productImage;
-//    }
-//
-//    public void setProductImage(ProductImageExt productImage) {
-//        this.productImage = productImage;
-//    }
+        public ProductImageExt getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(ProductImageExt productImage) {
+        this.productImage = productImage;
+    }
 
 
     @Override

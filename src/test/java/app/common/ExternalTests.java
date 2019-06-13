@@ -1,4 +1,4 @@
-package app.habrahabr;
+package app.common;
 
 import app.entity.external.ExternalConfig;
 import app.entity.external.data.product.domain.ProductExt;
@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +36,7 @@ public class ExternalTests {
     }
 
     @Test
-//    @Transactional("localTransactionManager")
+    @Transactional("localTransactionManager")
     public void whenCreatingImage() {
         File image = new File("/img/samsung.jpg");
         ProductImageExt productImage = new ProductImageExt();
@@ -51,7 +52,7 @@ public class ExternalTests {
     }
 
     @Test
-//    @Transactional("localTransactionManager")
+    @Transactional("localTransactionManager")
     public void whenCreatingProductWithImageAsID() {
         Long version =  new Date().getTime();
         File image = new File("P:\\Documents\\desktopseller\\sample-spring-boot-javafx-master\\src\\main\\resources\\img\\samsung.jpg");
@@ -63,22 +64,14 @@ public class ExternalTests {
         byte[] imageBytes = null;
         try {
             imageBytes = Files.readAllBytes(image.toPath());
-
-            System.out.println("####################");
-            System.out.println("IMAGE SIZE: " + imageBytes.length);
         } catch (IOException e) {
-            System.out.println("!!!!!!!!!!!!!!!!!!!!!NO IMAGE DATA!!!");
             e.printStackTrace();
         }
         productImage.setImage(imageBytes);
-
         productImage = productImageExtRepository.save(productImage);
-        System.out.println("IMAGE SAVEEED");
-
 
         ProductExt product = new ProductExt("TestProduct", 1111, version, 750, 8, "categoryA", "umBBB",
                 productImage.getId());
-
         product = productExtRepository.save(product);
 
         assertNotNull(productExtRepository.findOne(product.getId()));

@@ -12,42 +12,31 @@ import app.entity.local.data.shoppingCard.domain.ShoppingCard;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Service
 public class ProductServiceImpl implements ProductService{
-    @Autowired
-    private ProductRepository productRepository;
-    @Autowired
-    private ProductExtRepository productExtRepository;
-    @Autowired
-    private ProductImageRepository productImageRepository;
-    @Autowired
-    private ProductImageExtRepository productImageExtRepository;
-
+    @Autowired private ProductRepository productRepository;
+    @Autowired private ProductExtRepository productExtRepository;
 
     public void runService() {
         updateLocalProducts();
     }
 
-//    @Transactional
+    @Transactional
     public void updateLocalProducts() {
         Long version = new Date().getTime();
-        System.out.println("1");
         try {
             List<Product> productList = productRepository.findAllByNameNotNull();
-            System.out.println(2);
             if (productList.size() > 0) {
-                System.out.println(3);
                 productList.forEach(product -> {
                             product.setActive(false);
                             productRepository.save(product);
                         }
                 );
-
-            System.out.println("local products unactivated");
             }
 
             List<ProductExt> productExtList = productExtRepository.findAllByNameNotNull();
@@ -63,10 +52,7 @@ public class ProductServiceImpl implements ProductService{
                         product.setStock(productExt.getStock());
                         product.setUm(productExt.getUm());
                         product.setVersion(version);
-                        product = productRepository.save(product);
-                        if (product.getId() != null) {
-                            System.out.println("Product " + product.getId() + " are updated");
-                        }
+                        productRepository.save(product);
                     }
             );
         } catch (Exception e) {
@@ -78,14 +64,13 @@ public class ProductServiceImpl implements ProductService{
     public ShoppingCard initTestShoppingCard() {
         ProductBucket bucket = prepareTestBucket();
         Discount discount = prepareTestDiscount();
-        ShoppingCard shoppingCard = prepareTestShoppingCard(bucket, discount);
-        return shoppingCard;
+        return prepareTestShoppingCard(bucket, discount);
     }
 
     private ProductBucket prepareTestBucket() {
         ProductBucket bucket = new ProductBucket();
-        ArrayList<Product> product = productRepository.findAllByNameNotNull();
-        ArrayList<Product> productsBucket = new ArrayList<>();
+        List<Product> product = productRepository.findAllByNameNotNull();
+        List<Product> productsBucket = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             productsBucket.add(product.get(0));
         }
@@ -117,7 +102,4 @@ public class ProductServiceImpl implements ProductService{
     private List<ProductExt> getAllExternalProducts() {
         return productExtRepository.findAllByNameNotNull();
     }
-
-
-
 }

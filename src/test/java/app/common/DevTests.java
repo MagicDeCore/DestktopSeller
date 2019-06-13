@@ -1,4 +1,4 @@
-package app.habrahabr;
+package app.common;
 
 import app.entity.external.ExternalConfig;
 import app.entity.external.data.product.domain.ProductExt;

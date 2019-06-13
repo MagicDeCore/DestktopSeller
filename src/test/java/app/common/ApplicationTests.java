@@ -1,4 +1,4 @@
-package app.habrahabr;
+package app.common;
 
 import app.Application;
 import javafx.embed.swing.JFXPanel;
@@ -14,9 +14,7 @@ public class ApplicationTests {
 
     @BeforeClass
     public static void bootstrapJavaFx(){
-        // implicitly initializes JavaFX Subsystem
-        // see http://stackoverflow.com/questions/14025718/javafx-toolkit-not-initialized-when-trying-to-play-an-mp3-file-through-mediap
-        new JFXPanel();
+      new JFXPanel();
     }
 
     @Test

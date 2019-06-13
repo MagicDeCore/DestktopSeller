@@ -24,20 +24,11 @@ public class ProductExt {
     private String um;
     @Column(name = "PRODUCT_IMAGE_ID")
     private Integer productImageId;
-//
-//    @Column(name = "data_created")
-//    private Date dataCreated = new Date();
-//    @Column(name = "data_update")
-//    private Date dataCreated = new Date();
 
-
-
-
-
-//    @OneToOne(fetch = FetchType.LAZY,
-//            cascade =  CascadeType.ALL,
-//            mappedBy = "PRODUCT")
-//    private  ProductImageExt productImage;
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade =  CascadeType.ALL,
+            mappedBy = "PRODUCT")
+    private  ProductImageExt productImage;
 
     public ProductExt() { }
 
@@ -134,6 +125,13 @@ public class ProductExt {
         this.productImageId = productImageId;
     }
 
+    public ProductImageExt getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(ProductImageExt productImage) {
+        this.productImage = productImage;
+    }
     @Override
     public String toString() {
         return "ProductExt{" +
@@ -147,11 +145,4 @@ public class ProductExt {
                 ", um='" + um + '\'' +
                 '}';
     }
-    //    public ProductImageExt getProductImage() {
-//        return productImage;
-//    }
-//
-//    public void setProductImage(ProductImageExt productImage) {
-//        this.productImage = productImage;
-//    }
 }
