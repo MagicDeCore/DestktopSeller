@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.NumericSearchController">
+  <children>
+      <Pane prefHeight="600.0" prefWidth="383.0">
+         <children>
+            <ImageView fx:id="background" fitHeight="668.0" fitWidth="965.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 10 0 0 10;">
+               <image>
+                  <!--<Image url="@res/BackgroundMain.png" />-->
+               </image>
+            </ImageView>
+            <Pane layoutX="11.0" prefHeight="37.0" prefWidth="942.0" style="-fx-background-color: #171010; -fx-background-radius: 0 0 10 10; -fx-opacity: 0.8" />
+            <Pane layoutX="21.0" layoutY="50.0" prefHeight="442.0" prefWidth="346.0">
+               <children>
+                  <Pane layoutY="93.0" prefHeight="245.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="num1" mnemonicParsing="false" onAction="#numAction1" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-weight: bold; -fx-font-size: 24;" text="1" textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Regular" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="num2" layoutX="70.0" mnemonicParsing="false" onAction="#numAction2" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-weight: bold; -fx-font-size: 24;" text="2" textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Regular" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="num3" layoutX="140.0" mnemonicParsing="false" onAction="#numAction3" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-weight: bold; -fx-font-size: 24;" text="3" textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Regular" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="num4" layoutY="64.0" mnemonicParsing="false" onAction="#numAction4" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-weight: bold; -fx-font-size: 24;" text="4" textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Regular" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="num5" layoutX="70.0" layoutY="64.0" mnemonicParsing="false" onAction="#numAction5" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-weight: bold; -fx-font-size: 24;" text="5" textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Regular" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="num6" layoutX="140.0" layoutY="64.0" mnemonicParsing="false" onAction="#numAction6" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-weight: bold; -fx-font-size: 24;" text="6" textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Regular" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="num7" layoutY="128.0" mnemonicParsing="false" onAction="#numAction7" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-weight: bold; -fx-font-size: 24;" text="7" textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Regular" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="num8" layoutX="70.0" layoutY="128.0" mnemonicParsing="false" onAction="#numAction8" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-weight: bold; -fx-font-size: 24;" text="8" textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Regular" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="num9" layoutX="140.0" layoutY="128.0" mnemonicParsing="false" onAction="#numAction9" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-weight: bold; -fx-font-size: 24;" text="9" textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Regular" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="numBack" layoutY="192.0" mnemonicParsing="false" onAction="#numActionBack" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-weight: bold; -fx-font-size: 24;" textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Regular" size="25.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="35.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <!--<Image url="@res/backspace-arrow.png" />-->
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="num0" layoutX="70.0" layoutY="192.0" mnemonicParsing="false" onAction="#numAction0" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-weight: bold; -fx-font-size: 24;" text="0" textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Regular" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="numPoint" layoutX="140.0" layoutY="192.0" mnemonicParsing="false" onAction="#numActionPoint" prefHeight="50.0" prefWidth="60.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-weight: bold; -fx-font-size: 24;" text="." textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Regular" size="25.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <TextField fx:id="searchProd" layoutY="36.0" onMouseClicked="#setActiveSearch" prefHeight="35.0" prefWidth="250.0" style="-fx-border-radius: 5; -fx-background-color: #dcd9d9;">
+                     <font>
+                        <Font name="Metropolis-Medium" size="14.0" />
+                     </font></TextField>
+                  <TextField fx:id="quanty" layoutX="273.0" layoutY="36.0" onMouseClicked="#setActiveQuanty" prefHeight="35.0" prefWidth="65.0" style="-fx-border-radius: 5; -fx-background-color: #dcd9d9;">
+                     <font>
+                        <Font name="Metropolis-Medium" size="14.0" />
+                     </font></TextField>
+                  <Label layoutX="1.0" layoutY="10.0" prefHeight="27.0" prefWidth="244.0" text="Search Product / Scan Bar Code" textFill="#dcd9d9">
+                     <font>
+                        <Font name="Metropolis-Regular" size="11.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="256.0" layoutY="46.0" prefHeight="16.0" prefWidth="4.0" text="X" textFill="#7e7d7c">
+                     <font>
+                        <Font name="Metropolis-Regular" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="273.0" layoutY="15.0" prefHeight="17.0" prefWidth="60.0" text="Qty. / Scales" textFill="#dcd9d9">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="enterButton" layoutX="240.0" layoutY="94.0" mnemonicParsing="false" onAction="#enterButtonAction" prefHeight="115.0" prefWidth="96.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-size: 24;" text="Enter" textFill="WHITE">
+                     <font>
+                        <Font name="Metropolis-Black" size="25.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="updateProducts" layoutX="240.0" layoutY="221.0" mnemonicParsing="false" onAction="#updateProductsAction" prefHeight="115.0" prefWidth="96.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-weight: bold; -fx-font-size: 24;" textFill="WHITE">
+                     <font>
+                        <Font name="Metropolis-Regular" size="25.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label layoutX="268.0" layoutY="286.0" prefHeight="17.0" prefWidth="41.0" text="Update" textFill="WHITE" />
+                  <Label layoutX="265.0" layoutY="303.0" prefHeight="17.0" prefWidth="52.0" text="Products" textFill="WHITE" />
+                  <Button layoutY="370.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="100.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-weight: bold; -fx-font-size: 24;" textFill="WHITE">
+                     <font>
+                        <Font name="Metropolis-Regular" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="118.0" layoutY="370.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="100.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-weight: bold; -fx-font-size: 24;" textFill="WHITE">
+                     <font>
+                        <Font name="Metropolis-Regular" size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="emptyButton" layoutX="238.0" layoutY="370.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="100.0" style="-fx-background-radius: 10; -fx-background-color: #3f3f3f; -fx-font-weight: bold; -fx-font-size: 24;" textFill="WHITE">
+                     <font>
+                        <Font name="Metropolis-Regular" size="25.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="17.0" fitWidth="35.0" layoutX="35.0" layoutY="383.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <!--<Image url="@res/salesreport.png" />-->
+                     </image>
+                  </ImageView>
+                  <Label layoutX="40.0" layoutY="404.0" prefHeight="17.0" prefWidth="28.0" text="User" textFill="WHITE">
+                     <font>
+                        <Font name="Metropolis-SemiBold" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="417.0" prefHeight="17.0" prefWidth="72.0" text="Sales Report" textFill="WHITE">
+                     <font>
+                        <Font name="Metropolis-SemiBold" size="9.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="27.0" fitWidth="22.0" layoutX="280.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <!--<Image url="@res/delete.png" />-->
+                     </image>
+                  </ImageView>
+                  <Label layoutX="274.0" layoutY="408.0" prefHeight="17.0" prefWidth="41.0" text="Empty" textFill="WHITE">
+                     <font>
+                        <Font name="Metropolis-SemiBold" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="259.0" layoutY="418.0" prefHeight="17.0" prefWidth="72.0" text="Shopping Cart" textFill="WHITE">
+                     <font>
+                        <Font name="Metropolis-SemiBold" size="9.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="27.0" fitWidth="37.0" layoutX="150.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <!--<Image url="@res/delivered-box-verification-symbol.png" />-->
+                     </image>
+                  </ImageView>
+                  <Label layoutX="159.0" layoutY="407.0" prefHeight="17.0" prefWidth="28.0" text="Claim" textFill="WHITE">
+                     <font>
+                        <Font name="Metropolis-SemiBold" size="9.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="153.0" layoutY="418.0" prefHeight="17.0" prefWidth="52.0" text="Product" textFill="WHITE">
+                     <font>
+                        <Font name="Metropolis-SemiBold" size="9.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="33.0" fitWidth="52.0" layoutX="270.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <!--<Image url="@res/barcode.png" />-->
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="374.0" layoutY="50.0" prefHeight="458.0" prefWidth="600.0">
+               <children>
+                  <Pane fx:id="headerss" layoutX="9.0" layoutY="34.0" prefHeight="37.0" prefWidth="573.0" style="-fx-background-color: #171010; -fx-background-radius: 10 10 0 0; -fx-opacity: 0.8">
+                     <children>
+                        <Label layoutX="60.0" layoutY="5.0" text="Qty." textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Medium" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="60.0" layoutY="18.0" text="U.M." textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Medium" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="200.0" layoutY="5.0" prefHeight="11.0" prefWidth="287.0" text="Product Name - Category" textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Medium" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="200.0" layoutY="18.0" text="Barcode" textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Medium" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="520.0" layoutY="6.0" text="Price" textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Medium" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="518.0" layoutY="20.0" text="Value" textFill="WHITE">
+                           <font>
+                              <Font name="Metropolis-Medium" size="10.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
+
+                  <GridPane fx:id="productGrid" layoutX="9.0" layoutY="71.0" prefHeight="411.0" prefWidth="573.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Pane fx:id="productPain1" layoutX="9.0" layoutY="71.0" prefHeight="45.0" prefWidth="573.0" style="-fx-background-color: #5B5755; -fx-opacity: 0.7" GridPane.rowIndex="0">
+                           <children>
+                              <ImageView fx:id="minusProduct1" fitHeight="12.0" fitWidth="10.0" layoutX="20.0" layoutY="20.0" onMouseClicked="#minusProductAction1" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <!--<Image url="@res/ShopingCart/-.png" />-->
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="plusProduct1" fitHeight="15.0" fitWidth="15.0" layoutX="105.0" layoutY="14.0" onMouseClicked="#plusProductAction1" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <!--<Image url="@res/ShopingCart/+.png" />-->
+                                 </image></ImageView>
+                              <Label fx:id="productQnty1" alignment="CENTER" layoutX="50.0" layoutY="10.0" prefHeight="17.0" prefWidth="41.0" text="0" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="productName1" layoutX="198.0" layoutY="7.0" prefHeight="17.0" prefWidth="260.0" text="Samsung S9 - Silicon Matt (Black)" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="12.0" />
+                                 </font></Label>
+                              <Label fx:id="um1" alignment="CENTER" layoutX="53.0" layoutY="28.0" prefHeight="11.0" prefWidth="35.0" text="KG" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="barCode1" layoutX="198.0" layoutY="28.0" text="342113256" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="singlePrice1" alignment="CENTER_RIGHT" layoutX="466.0" layoutY="8.0" prefHeight="11.0" prefWidth="81.0" style="-fx-text-alignment: RIGHT;" text="0" textAlignment="RIGHT" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalPrice1" alignment="CENTER_RIGHT" layoutX="468.0" layoutY="22.0" prefHeight="16.0" prefWidth="81.0" style="-fx-opacity: 1;" text="0" textAlignment="RIGHT" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="productPain2" layoutX="9.0" layoutY="71.0" prefHeight="45.0" prefWidth="573.0" style="-fx-background-color: #4b4745; -fx-opacity: 0.7" GridPane.rowIndex="1">
+                           <children>
+                              <ImageView fx:id="minusProduct2" fitHeight="12.0" fitWidth="10.0" layoutX="20.0" layoutY="20.0" onMouseClicked="#minusProductAction2" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <!--<Image url="@res/ShopingCart/-.png" />-->
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="plusProduct2" fitHeight="15.0" fitWidth="15.0" layoutX="105.0" layoutY="14.0" onMouseClicked="#plusProductAction2" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <!--<Image url="@res/ShopingCart/+.png" />-->
+                                 </image></ImageView>
+                              <Label fx:id="productQnty2" alignment="CENTER" layoutX="50.0" layoutY="10.0" prefHeight="17.0" prefWidth="41.0" text="1" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="productName2" layoutX="198.0" layoutY="7.0" prefHeight="17.0" prefWidth="260.0" text="Samsung S9 - Silicon Slim Transparent" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="12.0" />
+                                 </font></Label>
+                              <Label fx:id="um2" alignment="CENTER" layoutX="53.0" layoutY="28.0" prefHeight="11.0" prefWidth="35.0" text="PCS" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="barCode2" layoutX="198.0" layoutY="28.0" text="342113257" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="singlePrice2" alignment="CENTER_RIGHT" layoutX="466.0" layoutY="8.0" prefHeight="11.0" prefWidth="81.0" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalPrice2" alignment="CENTER_RIGHT" layoutX="468.0" layoutY="22.0" prefHeight="16.0" prefWidth="81.0" style="-fx-opacity: 1;" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="productPain3" layoutX="9.0" layoutY="71.0" prefHeight="45.0" prefWidth="573.0" style="-fx-background-color: #5B5755; -fx-opacity: 0.7" GridPane.rowIndex="2">
+                           <children>
+                              <ImageView fx:id="minusProduct3" fitHeight="12.0" fitWidth="10.0" layoutX="20.0" layoutY="20.0" onMouseClicked="#minusProductAction3" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <!--<Image url="@res/ShopingCart/-.png" />-->
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="plusProduct3" fitHeight="15.0" fitWidth="15.0" layoutX="105.0" layoutY="14.0" onMouseClicked="#plusProductAction3" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <!--<Image url="@res/ShopingCart/+.png" />-->
+                                 </image></ImageView>
+                              <Label fx:id="productQnty3" alignment="CENTER" layoutX="50.0" layoutY="10.0" prefHeight="17.0" prefWidth="41.0" text="520" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="productName3" layoutX="198.0" layoutY="7.0" prefHeight="17.0" prefWidth="260.0" text="Samsung S9 - Glitter Case (Red)" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="12.0" />
+                                 </font></Label>
+                              <Label fx:id="um3" alignment="CENTER" layoutX="53.0" layoutY="28.0" prefHeight="11.0" prefWidth="35.0" text="PCS" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="barCode3" layoutX="198.0" layoutY="28.0" text="342113258" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="singlePrice3" alignment="CENTER_RIGHT" layoutX="466.0" layoutY="8.0" prefHeight="11.0" prefWidth="81.0" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalPrice3" alignment="CENTER_RIGHT" layoutX="468.0" layoutY="22.0" prefHeight="16.0" prefWidth="81.0" style="-fx-opacity: 1;" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="productPain4" layoutX="9.0" layoutY="71.0" prefHeight="45.0" prefWidth="573.0" style="-fx-background-color: #5B5755; -fx-opacity: 0.7" GridPane.rowIndex="3">
+                           <children>
+                              <ImageView fx:id="minusProduct4" fitHeight="12.0" fitWidth="10.0" layoutX="20.0" layoutY="20.0" onMouseClicked="#minusProductAction4" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <!--<Image url="@res/ShopingCart/-.png" />-->
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="plusProduct4" fitHeight="15.0" fitWidth="15.0" layoutX="105.0" layoutY="14.0" onMouseClicked="#plusProductAction4" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <!--<Image url="@res/ShopingCart/+.png" />-->
+                                 </image></ImageView>
+                              <Label fx:id="productQnty4" alignment="CENTER" layoutX="50.0" layoutY="10.0" prefHeight="17.0" prefWidth="41.0" text="520" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="productName4" layoutX="198.0" layoutY="7.0" prefHeight="17.0" prefWidth="260.0" text="Samsung S9 - Glitter Case (Red)" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="12.0" />
+                                 </font></Label>
+                              <Label fx:id="um4" alignment="CENTER" layoutX="53.0" layoutY="28.0" prefHeight="11.0" prefWidth="35.0" text="PCS" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="barCode4" layoutX="198.0" layoutY="28.0" text="342113258" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="singlePrice4" alignment="CENTER_RIGHT" layoutX="466.0" layoutY="8.0" prefHeight="11.0" prefWidth="81.0" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalPrice4" alignment="CENTER_RIGHT" layoutX="468.0" layoutY="22.0" prefHeight="16.0" prefWidth="81.0" style="-fx-opacity: 1;" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="productPain5" layoutX="9.0" layoutY="71.0" prefHeight="45.0" prefWidth="573.0" style="-fx-background-color: #5B5755; -fx-opacity: 0.7" GridPane.rowIndex="4">
+                           <children>
+                              <ImageView fx:id="minusProduct5" fitHeight="12.0" fitWidth="10.0" layoutX="20.0" layoutY="20.0" onMouseClicked="#minusProductAction5" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <!--<Image url="@res/ShopingCart/-.png" />-->
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="plusProduct5" fitHeight="15.0" fitWidth="15.0" layoutX="105.0" layoutY="14.0" onMouseClicked="#plusProductAction5" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <!--<Image url="@res/ShopingCart/+.png" />-->
+                                 </image></ImageView>
+                              <Label fx:id="productQnty5" alignment="CENTER" layoutX="50.0" layoutY="10.0" prefHeight="17.0" prefWidth="41.0" text="520" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="productName5" layoutX="198.0" layoutY="7.0" prefHeight="17.0" prefWidth="260.0" text="Samsung S9 - Glitter Case (Red)" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="12.0" />
+                                 </font></Label>
+                              <Label fx:id="um5" alignment="CENTER" layoutX="53.0" layoutY="28.0" prefHeight="11.0" prefWidth="35.0" text="PCS" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="barCode5" layoutX="198.0" layoutY="28.0" text="342113258" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="singlePrice5" alignment="CENTER_RIGHT" layoutX="466.0" layoutY="8.0" prefHeight="11.0" prefWidth="81.0" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalPrice5" alignment="CENTER_RIGHT" layoutX="468.0" layoutY="22.0" prefHeight="16.0" prefWidth="81.0" style="-fx-opacity: 1;" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="productPain6" layoutX="9.0" layoutY="71.0" prefHeight="45.0" prefWidth="573.0" style="-fx-background-color: #5B5755; -fx-opacity: 0.7" GridPane.rowIndex="5">
+                           <children>
+                              <ImageView fx:id="minusProduct6" fitHeight="12.0" fitWidth="10.0" layoutX="20.0" layoutY="20.0" onMouseClicked="#minusProductAction6" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <!--<Image url="@res/ShopingCart/-.png" />-->
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="plusProduct6" fitHeight="15.0" fitWidth="15.0" layoutX="105.0" layoutY="14.0" onMouseClicked="#plusProductAction6" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <!--<Image url="@res/ShopingCart/+.png" />-->
+                                 </image></ImageView>
+                              <Label fx:id="productQnty6" alignment="CENTER" layoutX="50.0" layoutY="10.0" prefHeight="17.0" prefWidth="41.0" text="520" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="productName6" layoutX="198.0" layoutY="7.0" prefHeight="17.0" prefWidth="260.0" text="Samsung S9 - Glitter Case (Red)" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="12.0" />
+                                 </font></Label>
+                              <Label fx:id="um6" alignment="CENTER" layoutX="53.0" layoutY="28.0" prefHeight="11.0" prefWidth="35.0" text="PCS" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="barCode6" layoutX="198.0" layoutY="28.0" text="342113258" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="singlePrice6" alignment="CENTER_RIGHT" layoutX="466.0" layoutY="8.0" prefHeight="11.0" prefWidth="81.0" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalPrice6" alignment="CENTER_RIGHT" layoutX="468.0" layoutY="22.0" prefHeight="16.0" prefWidth="81.0" style="-fx-opacity: 1;" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="productPain7" layoutX="9.0" layoutY="71.0" prefHeight="45.0" prefWidth="573.0" style="-fx-background-color: #5B5755; -fx-opacity: 0.7" GridPane.rowIndex="6">
+                           <children>
+                              <ImageView fx:id="minusProduct7" fitHeight="12.0" fitWidth="10.0" layoutX="20.0" layoutY="20.0" onMouseClicked="#minusProductAction7" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <!--<Image url="@res/ShopingCart/-.png" />-->
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="plusProduct7" fitHeight="15.0" fitWidth="15.0" layoutX="105.0" layoutY="14.0" onMouseClicked="#plusProductAction7" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <!--<Image url="@res/ShopingCart/+.png" />-->
+                                 </image></ImageView>
+                              <Label fx:id="productQnty7" alignment="CENTER" layoutX="50.0" layoutY="10.0" prefHeight="17.0" prefWidth="41.0" text="520" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="productName7" layoutX="198.0" layoutY="7.0" prefHeight="17.0" prefWidth="260.0" text="Samsung S9 - Glitter Case (Red)" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="12.0" />
+                                 </font></Label>
+                              <Label fx:id="um7" alignment="CENTER" layoutX="53.0" layoutY="28.0" prefHeight="11.0" prefWidth="35.0" text="PCS" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="barCode7" layoutX="198.0" layoutY="28.0" text="342113258" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="singlePrice7" alignment="CENTER_RIGHT" layoutX="466.0" layoutY="8.0" prefHeight="11.0" prefWidth="81.0" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="totalPrice7" alignment="CENTER_RIGHT" layoutX="468.0" layoutY="22.0" prefHeight="16.0" prefWidth="81.0" style="-fx-opacity: 1;" text="0" textAlignment="RIGHT" textFill="WHITE">
+                                 <font>
+                                    <Font name="Metropolis-Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="discountPain" layoutX="9.0" layoutY="71.0" prefHeight="45.0" prefWidth="573.0" style="-fx-background-color: #4b4745; -fx-opacity: 0.7" GridPane.rowIndex="7">
+                           <children>
+                              <Label fx:id="discount" layoutX="70.0" layoutY="15.0" prefHeight="17.0" prefWidth="41.0" text="!" textFill="#fb6f6f">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="discountAdded" layoutX="198.0" layoutY="15.0" prefHeight="17.0" prefWidth="260.0" text="Discount Added" textFill="#fb6f6f">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="12.0" />
+                                 </font></Label>
+                              <Label fx:id="discountCount" alignment="CENTER_RIGHT" layoutX="426.0" layoutY="15.0" prefHeight="16.0" prefWidth="132.0" style="-fx-opacity: 1;" text="-13312,00" textFill="#fb6f6f">
+                                 <font>
+                                    <Font name="Metropolis-Black" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </GridPane>
+                  <Button fx:id="client" layoutX="63.0" layoutY="2.0" mnemonicParsing="false" onAction="#openShoppingCard" prefHeight="25.0" prefWidth="120.0" text="Client 1" textAlignment="RIGHT" />
+               </children>
+            </Pane>
+            <Pane layoutX="383.0" layoutY="515.0" prefHeight="85.0" prefWidth="430.0">
+               <children>
+                  <Label fx:id="totalLabel" layoutX="15.0" layoutY="50.0" prefHeight="27.0" prefWidth="90.0" text="Total" textFill="WHITE">
+                     <font>
+                        <Font name="Metropolis-Medium" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalTotalPrice" layoutX="258.0" layoutY="50.0" prefHeight="27.0" prefWidth="106.0" text="27720,00" textAlignment="RIGHT" textFill="WHITE">
+                     <font>
+                        <Font name="Metropolis-Medium" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="discountLabel" layoutX="23.0" layoutY="34.0" prefHeight="17.0" prefWidth="50.0" text="Discount" textFill="#fb6f6f">
+                     <font>
+                        <Font name="Metropolis-Regular" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="discountCountVal" layoutX="305.0" layoutY="34.0" prefHeight="17.0" prefWidth="72.0" text="-13312,00" textFill="#fb6f6f">
+                     <font>
+                        <Font name="Metropolis-Regular" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="subTotalLabel" layoutX="23.0" layoutY="14.0" prefHeight="17.0" prefWidth="41.0" text="Subtotal" textFill="#838383">
+                     <font>
+                        <Font name="Metropolis-Regular" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="subtotalCountVal" layoutX="305.0" layoutY="14.0" prefHeight="17.0" prefWidth="65.0" text="41032,00" textAlignment="RIGHT" textFill="#838383">
+                     <font>
+                        <Font name="Metropolis-Regular" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ron1" layoutX="364.0" layoutY="14.0" prefHeight="17.0" prefWidth="65.0" text="RON" textAlignment="RIGHT" textFill="#838383">
+                     <font>
+                        <Font name="Metropolis-Regular" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ron2" layoutX="364.0" layoutY="34.0" prefHeight="17.0" prefWidth="65.0" text="RON" textAlignment="RIGHT" textFill="#838383">
+                     <font>
+                        <Font name="Metropolis-Regular" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ron3" layoutX="364.0" layoutY="60.0" prefHeight="17.0" prefWidth="65.0" text="RON" textAlignment="RIGHT" textFill="#838383">
+                     <font>
+                        <Font name="Metropolis-Regular" size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+  </children>
+</AnchorPane>

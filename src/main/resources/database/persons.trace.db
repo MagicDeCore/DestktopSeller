@@ -1,0 +1,20 @@
+04-23 11:47:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Синтаксическая ошибка в выражении SQL "CREATE TABLE PUBLIC.PRODUCT_BUCKET_PUBLIC.[*]PRODUCT (PUBLIC.PRODUCT_BUCKET_ID INTEGER NOT NULL, PRODUCTLIST_ID INTEGER NOT NULL) "
+Syntax error in SQL statement "CREATE TABLE PUBLIC.PRODUCT_BUCKET_PUBLIC.[*]PRODUCT (PUBLIC.PRODUCT_BUCKET_ID INTEGER NOT NULL, PRODUCTLIST_ID INTEGER NOT NULL) "; SQL statement:
+create table PUBLIC.PRODUCT_BUCKET_PUBLIC.PRODUCT (PUBLIC.PRODUCT_BUCKET_id integer not null, productList_id integer not null) [42000-187]
+04-23 11:47:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "PRODUCT_BUCKET_PUBLIC" не найдена
+Table "PRODUCT_BUCKET_PUBLIC" not found; SQL statement:
+alter table PUBLIC.PRODUCT_BUCKET_PUBLIC.PRODUCT drop constraint if exists UK_4dpjx31ctpbspmrvlxmulg80a [42102-187]
+04-23 11:47:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "PRODUCT_BUCKET_PUBLIC" не найдена
+Table "PRODUCT_BUCKET_PUBLIC" not found; SQL statement:
+alter table PUBLIC.PRODUCT_BUCKET_PUBLIC.PRODUCT add constraint UK_4dpjx31ctpbspmrvlxmulg80a  unique (productList_id) [42102-187]
+04-23 11:47:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "PRODUCT_BUCKET_PUBLIC" не найдена
+Table "PRODUCT_BUCKET_PUBLIC" not found; SQL statement:
+alter table PUBLIC.PRODUCT_BUCKET_PUBLIC.PRODUCT add constraint FK_4dpjx31ctpbspmrvlxmulg80a foreign key (productList_id) references PUBLIC.PRODUCT [42102-187]
+04-23 11:47:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Таблица "PRODUCT_BUCKET_PUBLIC" не найдена
+Table "PRODUCT_BUCKET_PUBLIC" not found; SQL statement:
+alter table PUBLIC.PRODUCT_BUCKET_PUBLIC.PRODUCT add constraint FK_qr6cllwd39v5sq6yb96ju85ht foreign key (PUBLIC.PRODUCT_BUCKET_id) references PUBLIC.PRODUCT_BUCKET [42102-187]
